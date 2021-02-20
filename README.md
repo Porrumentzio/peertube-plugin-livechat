@@ -45,13 +45,18 @@ This is the main purpose of this plugin: providing a chatting experience to user
 
 The chat will be available for all Peertube video that are not live.
 
+### Users can activate chat per video
+
+When editing a video, the user can activate the webchat.
+
 ### Activate chat for specific videos
 
 You can choose some UUIDs for which the chat will be available.
 If you don't want te enable the feature for all videos, you can use this field to list videos UUIDs.
 You can add comments: everything rights to the # character will be stripped off, as for empty lines.
 
-NB: this feature will probably soon disappear. I planned to add a checkbox in each video settings.
+NB: this feature seems redundant with the ability for users to activate the webchat feature per video.
+But this feature is only available to instance's admins.
 
 ### Use builtin ConverseJS
 

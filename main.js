@@ -50,6 +50,15 @@ async function register ({
     private: false
   })
   registerSetting({
+    name: 'chat-activate-on-video',
+    label: 'Activate chat per video in the update form',
+    type: 'input-checkbox',
+    default: false,
+    descriptionHTML: 'If checked, users can activate manually chat per video.<br>' +
+      'Do not check this if chats are activated for all live or non-live videos. It would be confusing.',
+    private: false
+  })
+  registerSetting({
     name: 'chat-videos-list',
     label: 'Activate chat for specific videos',
     type: 'input-textarea',

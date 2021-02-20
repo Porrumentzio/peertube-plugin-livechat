@@ -1,7 +1,7 @@
 
 'use strict'
 
-function register ({ registerHook, _peertubeHelpers }) {
+async function register ({ registerHook, registerVideoField, peertubeHelpers }) {
   registerHook({
     target: 'action:router.navigation-end',
     handler: () => {
@@ -14,6 +14,20 @@ function register ({ registerHook, _peertubeHelpers }) {
         .forEach(dom => dom.remove())
     }
   })
+
+  const settings = await peertubeHelpers.getSettings()
+  if (settings['chat-activate-on-video']) {
+    const label = await peertubeHelpers.translate('Display a chat')
+    registerVideoField(
+      {
+        name: 'livechat',
+        label: label,
+        type: 'input-checkbox',
+        default: false
+      },
+      { type: 'update' }
+    )
+  }
 }
 
 export {
